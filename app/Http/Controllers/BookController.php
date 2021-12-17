@@ -86,4 +86,7 @@ class BookController extends Controller
             "data" => $book
         ]);
     }
+    public function search($title){
+        return Book::where('title', 'like', '%'.$title.'%')->get();
+    }
 }
